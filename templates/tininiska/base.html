@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="tininiskApp">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:bold|Galada|Assistant">
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/estilo.css" %}">
+	<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/angular.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/angular-sanitize.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "djng/js/django-angular.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/proceso.js" %}"></script>
+</head>
+<body>
+<div id="encabezado">
+<div><img src="{% static "img/banner_tininiska.png" %}" /></div>
+	{% block encabezado %}{% endblock %}
+</div>
+<div id="contenedor" ng-controller="mainController">
+	<div>
+		<input type="button" name="verInicio" value="Inicio" ng-click="VerInicio();" ng-if="verDetalle == true">
+	</div>
+{% verbatim %}
+	<div class="notificacion">{{ mensaje_notificacion }}</div>
+{% endverbatim %}
+	<div id="contenido" ng-if="contenido == null" class="contenido">
+		{% block contenido %}{% endblock %}
+	</div>
+	<div>
+		{% block detalle %}{% endblock %}
+	</div>
+</div>
+<div id="pie">
+	<p>
+		IX Edición del Congreso de Computación para el Desarrollo
+		COMPDES - 2016
+	</p>
+</div>
+</body>
+</html>

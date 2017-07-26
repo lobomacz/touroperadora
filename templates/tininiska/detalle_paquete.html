@@ -1,0 +1,17 @@
+<div>
+	<div class="tira-imagenes">
+		{% for imagen in paquete.imagenes.all %}
+		<img src="{{ imagen.imagen.url }}" class="imagen-paquete" alt="{{ imagen.titulo }}" />
+		{% endfor %}
+	</div>
+	<p class="titulo-paquete">{{ paquete.titulo }}</p>
+	<p>{{ paquete.descripcion }}</p>
+	<p>Costo x persona: U${{ paquete.costo }}</p>
+	<input type="button" ng-click="$ctrl.SeleccionaCliente()" value="Reservaciones">
+	<input type="button" name="contactenos" value="Contáctanos" ng-click="Contactanos()">
+	<comprueba-cliente nuevo="$ctrl.nuevo" ng-if="$ctrl.compCliente == true" on-close="$ctrl.CompruebaCliente($ctrl.nuevo)"></comprueba-cliente>
+	<formulario-cliente ng-if="$ctrl.formCliente == true" on-close="$ctrl.FormClienteNuevo()"></formulario-cliente>
+	<formulario-reservacion ng-if="$ctrl.formReserva == true" on-close="$ctrl.CierraDetalle()"></formulario-reservacion>
+	<formulario-contacto ng-if="$ctrl.formContacto == true" on-close="$ctrl.CierraDetalle()"></formulario-contacto>
+</div>
+	

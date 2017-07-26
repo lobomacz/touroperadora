@@ -1,0 +1,9 @@
+{% if form %}
+<div>
+	<form name="{{ form.form_name }}" method="post" action="{{ action_url }}" novalidate>
+		{% csrf_token %}
+		{{ form.as_div }}
+		<input type="button" name="{{ form.form_name }}_submit" ng-click="$ctrl.{{ form.form_name }}_submit" value="Guardar" ng-disabled="{{ form.form_name }}.$invalid">
+	</form>
+</div>
+{% endif %}

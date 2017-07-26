@@ -1,0 +1,36 @@
+{% extends "tininiska/base.html" %}
+
+{% block title %}Operadora Turística - TININISKA{% endblock %}
+
+{% block encabezado %}
+<div>
+	<h2 class="frase-especial">¡Bienvenidos a Nicaragua!</h2>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<div class="lista-paquetes">
+	{% if lista_paquetes %}
+	<h3>Nuestros Paquetes Turísticos</h3>
+		{% for paquete in lista_paquetes %}
+		<div class="item-lista-paquetes">
+			<img src="{{ paquete.imagenes.first.imagen.url }}" class="imagen-paquete" alt="{{ paquete.imagenes.first.titulo }}" />
+			<p class="titulo-paquete">{{ paquete.titulo }}</p>
+			<input data-componente="{{ paquete.id }}" type="button" name="" value="Ver" ng-click="ComponenteDetallePaq($event);">
+		</div>
+		{% endfor %}
+	{% else %}
+	<h3>Espere nuestra nueva oferta de paquetes turísticos.</h3>
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block detalle %}
+<div ng-if="verDetalle == true" ng-switch on="componenteDetalle">
+	{% for paquete in lista_paquetes %}
+	<div ng-switch-when="{{ paquete.id }}">
+		<detalle-paquete plantilla="{{ paquete.get_absolute_url }}"></detalle-paquete>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
