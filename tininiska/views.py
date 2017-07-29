@@ -40,7 +40,8 @@ def nueva_reservacion(request):
 			datos_reservacion = request.POST.copy()
 			form = forms.FormReservacion(datos_reservacion)
 			if form.is_valid():
-				reservacion = form.save()
+				reservacion = models.RESERVACION(datos_reservacion)
+				reservacion.save()
 				return JsonResponse({'mensaje':'Su reservación se aplicó con éxito. Nos pondremos en contacto con usted a la brevedad posible.'})
 			else:
 				return JsonResponse({'error':'Ocurrió un problema al aplicar su reservación. Por favor intentelo mas tarde.'})
@@ -63,11 +64,11 @@ def nuevo_cliente(request):
 def contactanos(request):
 	metodo = request.method
 	if metodo == 'GET':
-		form = forms.FormMensaje()
+		form = forms.FormContacto()
 		return render_to_response('tininiska/form_base.html',{'form':form,'action_url':reverse('vcontactanos')})
 	elif metodo == 'POST':
 		datos_mensaje = json.load(request.body)
-		form = forms.FormMensaje(datos_mensaje)
+		form = forms.FormContacto(datos_mensaje)
 		if form.is_valid():
 			toaddr = "lobomacz@gmail.com"
 			fromaddr = datos_mensaje['email']

@@ -24,9 +24,9 @@ class FormCliente(NgModelFormMixin,NgFormValidationMixin,Bootstrap3ModelForm):
 		exclude = ['paquetes_res',]
 
 
-class FormMensaje(NgModelFormMixin,NgFormValidationMixin,Bootstrap3Form):
-	scope_prefix = 'mensaje_data'
-	form_name = "form_mensaje"
+class FormContacto(NgModelFormMixin,NgFormValidationMixin,Bootstrap3Form):
+	scope_prefix = 'contacto_data'
+	form_name = "form_contacto"
 	asunto = forms.CharField(label='Asunto',max_length=100)
 	email = forms.EmailField(label='Correo-e')
 	mensaje = forms.CharField(label='Mensaje',max_length=600,widget=forms.widgets.Textarea)

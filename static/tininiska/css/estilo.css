@@ -46,6 +46,21 @@ ul.djng-form-errors li.valid:before {
         content: "\2714";  /* adds a green tick */
 }
 
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.notificacion {
+  border: 1px solid black;
+  opacity: 1;
+  padding: 10px;
+}
+
 .animate-switch-container {
   position:relative;
   border:1px solid black;
