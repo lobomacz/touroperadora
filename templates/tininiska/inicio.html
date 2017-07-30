@@ -29,7 +29,7 @@
 <div ng-if="verDetalle == true" ng-switch on="componenteDetalle">
 	{% for paquete in lista_paquetes %}
 	<div ng-switch-when="{{ paquete.id }}">
-		<detalle-paquete plantilla="{{ paquete.get_absolute_url }}" mensaje="$ctrl.mensaje" on-update="$ctrl.MuestraMensaje($ctrl.mensaje)" on-close="$ctrl.CierraDetalle($ctrl.mensaje)"></detalle-paquete>
+		<detalle-paquete plantilla="{{ paquete.get_absolute_url }}" mensaje="mensaje" on-update="$ctrl.MuestraMensaje($ctrl.mensaje)" on-close="$ctrl.CierraDetalle($ctrl.mensaje)"></detalle-paquete>
 	</div>
 	{% endfor %}
 </div>

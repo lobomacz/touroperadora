@@ -208,7 +208,7 @@ tininiskApp.component('formularioContacto',{
 	template:'contactanos/',
 	controller:'FormularioContactoController',
 	bindings:{
-		mensaje:'='
+		mensaje:'=',
 		'close':'&onClose',
 	},
 });
