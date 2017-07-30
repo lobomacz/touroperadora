@@ -115,7 +115,7 @@ tininiskApp.controller('FormularioClienteController',['$scope','$element','$attr
 
 }]);
 
-tininiskApp.controller('FormularioReservacionController',['$scope','$element','$attrs',function($scope,$element,$attrs){
+tininiskApp.controller('FormularioReservacionController',['$scope','$element','$attrs','$http',function($scope,$element,$attrs,$http){
 
 	var ctrl = this;
 	ctrl.mensaje = "";
@@ -134,7 +134,7 @@ tininiskApp.controller('FormularioReservacionController',['$scope','$element','$
 
 }]);
 
-tininiskApp.controller('FormularioContactoController',['$scope','$element','$attrs',function($scope,$element,$attrs){
+tininiskApp.controller('FormularioContactoController',['$scope','$element','$attrs','$http',function($scope,$element,$attrs,$http){
 
 	var ctrl = this;
 	ctrl.mensaje = "";
