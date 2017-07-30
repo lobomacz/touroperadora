@@ -1,5 +1,5 @@
 
-var tininiskApp = angular.module('tininiskApp',['djng.forms','ngSanitize']).config(function($httpProvider){
+var tininiskApp = angular.module('tininiskApp',['djng.forms']).config(function($httpProvider){
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 	$httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -9,8 +9,8 @@ var tininiskApp = angular.module('tininiskApp',['djng.forms','ngSanitize']).conf
 tininiskApp.controller('mainController',['$scope','$http','$interval',function($scope,$http,$interval){
 
 	$scope.contenido = null;
-	$scope.verDetalle = false,
-	$scope.mensaje = ""
+	$scope.verDetalle = false;
+	$scope.mensaje = null;
 
 	$scope.componenteDetalle = "";
 	
@@ -33,7 +33,7 @@ tininiskApp.controller('mainController',['$scope','$http','$interval',function($
 		$scope.contenido = false;
 		$scope.mensaje = mensaje;
 		$interval(function(){
-			$scope.mensaje = "";
+			$scope.mensaje = null;
 		},5000);
 	};
 

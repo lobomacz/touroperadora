@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/estilo.css" %}">
 	<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/angular.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "js/angular-sanitize.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "djng/js/django-angular.min.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/proceso.js" %}"></script>
 </head>
@@ -22,7 +21,7 @@
 		<input type="button" name="verInicio" value="Inicio" ng-click="VerInicio();" ng-if="verDetalle == true">
 	</div>
 {% verbatim %}
-	<div class="notificacion animate-show-hide" ng-show="mensaje != ''">{{ mensaje_notificacion }}</div>
+	<div class="notificacion animate-show-hide" ng-show="mensaje != null">{{ mensaje_notificacion }}</div>
 {% endverbatim %}
 	<div id="contenido" ng-if="contenido == null" class="contenido">
 		{% block contenido %}{% endblock %}
