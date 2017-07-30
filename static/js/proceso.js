@@ -32,8 +32,9 @@ tininiskApp.controller('mainController',['$scope','$http','$interval',function($
 		$scope.verDetalle = false;
 		$scope.contenido = false;
 		$scope.mensaje = mensaje;
+		var ctrl = $scope;
 		$interval(function(){
-			$scope.mensaje = null;
+			ctrl.mensaje = null;
 		},5000);
 	};
 
@@ -200,7 +201,7 @@ tininiskApp.component('formularioReservacion',{
 	controller:'FormularioReservacionController',
 	bindings:{
 		mensaje:'=',
-		'close':'&onClose',
+		'onClose': '&',
 	},
 });
 
@@ -209,7 +210,7 @@ tininiskApp.component('formularioContacto',{
 	controller:'FormularioContactoController',
 	bindings:{
 		mensaje:'=',
-		'close':'&onClose',
+		'onClose': '&',
 	},
 });
 

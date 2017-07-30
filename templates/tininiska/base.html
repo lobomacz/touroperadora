@@ -21,7 +21,7 @@
 		<input type="button" name="verInicio" value="Inicio" ng-click="VerInicio();" ng-if="verDetalle == true">
 	</div>
 {% verbatim %}
-	<div class="notificacion animate-show-hide" ng-show="mensaje != null">{{ mensaje_notificacion }}</div>
+	<div class="notificacion animate-show-hide" ng-show="mensaje != null">{{ mensaje }}</div>
 {% endverbatim %}
 	<div id="contenido" ng-if="contenido == null" class="contenido">
 		{% block contenido %}{% endblock %}

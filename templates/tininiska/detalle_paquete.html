@@ -11,7 +11,7 @@
 	<input type="button" name="contactenos" value="Contáctanos" ng-click="Contactanos()">
 	<comprueba-cliente nuevo="$ctrl.nuevo" ng-if="$ctrl.compCliente == true" on-close="$ctrl.CompruebaCliente($ctrl.nuevo)"></comprueba-cliente>
 	<formulario-cliente ng-if="$ctrl.formCliente == true" mensaje="$ctrl.mensaje" on-close="$ctrl.FormClienteNuevo($ctrl.mensaje)"></formulario-cliente>
-	<formulario-reservacion ng-if="$ctrl.formReserva == true" mensaje="$ctrl.mensaje" on-close="$ctrl.CierraDetalle($ctrl.mensaje)"></formulario-reservacion>
-	<formulario-contacto ng-if="$ctrl.formContacto == true" mensaje="$ctrl.mensaje" on-close="$ctrl.CierraDetalle($ctrl.mensaje)"></formulario-contacto>
+	<formulario-reservacion ng-if="$ctrl.formReserva == true" mensaje="$ctrl.mensaje"></formulario-reservacion>
+	<formulario-contacto ng-if="$ctrl.formContacto == true" mensaje="$ctrl.mensaje"></formulario-contacto>
 </div>
 	
